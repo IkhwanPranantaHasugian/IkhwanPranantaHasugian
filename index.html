@@ -3,9 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portofolio</title>
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=PT+Sans+Caption&display=swap');
+
+        body {
+            font-family: 'Madimi One', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #4b6cb7, #182848);
+            overflow-x: hidden;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        header {
+            color: white;
+            background-color: #2b4a87;
+            padding: 8px 0;
+        }
+
+        header p {
+            margin: 0;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        section h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-family: 'PT Sans Caption', sans-serif;
+        }
+
+        .portfolio-item {
+            margin-bottom: 30px;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin:  auto 10px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    Testing....!!!!
+    <div class="wave-container">
+        <div class="wave"></div>
+    </div>
+    <header>
+        <div class="container">
+            <p>IKHWAN PRANANTA HASUGIAN</p>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="container">
+            <div class="profile-image">
+                <img src="tes.jpg" alt="Your Photo">
+            </div>
+        </div>
+        <div class="container">
+            <h2>Selamat Datang di Portofolio Saya</h2>
+            <h4>Saya adalah seorang mahasiswa aktif yang sedang belajar web development 
+                ,saya telah mengeksplorasi beragam teknologi dan metodologi untuk menciptakan pengalaman digital yang menarik dan berdaya guna. Dengan keahlian mendalam dalam HTML, CSS, dan JavaScript, serta pengalaman yang luas dalam penggunaan berbagai framework seperti Bootstrap dan React.
+            </h4>
+        </div>
+        <div class="container">
+            <h2>PORTOFOLIO</h2>
+            <div class="portfolio-item">
+                <img src="tes2.png" alt="Proyek 1">
+                <h4>PROJECT GROSIR_NIUS</h4>
+                <h4>Ini adalah proyek pertama saya yang saya kerjakan dengan tangan saya sendiri dan seorang diri,
+                    disini saya membuat web untuk sebuah grosir yang ingin membuat website untuk pelanggan online.
+                </h4>
+            </div>
+        </div>
+        <div class="container">
+            <h2>CONTACT</h2>
+            <h4><i class="fas fa-envelope"></i> Email: nanta2612@gmail.com</h4>
+            <h4><i class="fab fa-instagram"></i> Instagram: nantapra_</h4>
+            <h4><i class="fab fa-whatsapp"></i> Whatsapp: +6282276157805</h4>
+        </div>        
+    </section>
 </body>
 </html>
