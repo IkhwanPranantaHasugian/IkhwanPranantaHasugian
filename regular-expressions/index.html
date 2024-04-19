@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <h2 class="text-lg font-semibold mb-4">Form Validasi</h2>
+    <form id="emailForm">
+      <div class="mb-4">
+        <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
+        <input type="text" id="nama" name="nama" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <p id="inputNamaError" class="text-red-500 text-xs mt-1"></p>
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <p id="inputEmailError" class="text-red-500 text-xs mt-1"></p>
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" name="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <p id="inputPasswordError" class="text-red-500 text-xs mt-1"></p>
+      </div>
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-gray-700">No Handphone</label>
+        <input type="text" id="noTelp" name="noTelp" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <p id="inputNoTelpError" class="text-red-500 text-xs mt-1"></p>
+      </div>
+      <div class="mb-4">
+        <label for="url" class="block text-sm font-medium text-gray-700">URL</label>
+        <input type="text" id="url" name="url" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <p id="inputURLError" class="text-red-500 text-xs mt-1"></p>
+      </div>
+      <button type="submit" class="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Submit</button>
+    </form>
+  </div>
+
+  <script src="regex.js"></script>
+</body>
+</html>
