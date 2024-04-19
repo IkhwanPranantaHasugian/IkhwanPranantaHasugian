@@ -38,7 +38,7 @@ document.getElementById('emailForm').addEventListener('submit', function(event)
     } 
     else if (!validasiNama.test(inputNama.value)) 
     {
-        inputNamaError.textContent = 'Masukkan Nama Yang Valid Dengan Menggunakan Camel Case';
+        inputNamaError.textContent = 'Masukkan Nama Yang Valid Dengan Menggunakan Pascal Case';
         inputNama.classList.add('border-red-500');
     } 
     else 
