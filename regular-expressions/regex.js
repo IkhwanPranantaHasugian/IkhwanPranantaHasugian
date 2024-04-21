@@ -1,118 +1,91 @@
-document.getElementById('emailForm').addEventListener('submit', function(event) 
-{
-    event.preventDefault();
+$(function () {
+    $('#emailForm').submit(function (event) {
+        event.preventDefault();
 
-    //Validasi Penginputan Email
-    const inputEmail = document.getElementById('email');
-    const inputEmailError = document.getElementById('inputEmailError');
-    const validasiEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const emailValid = validasiEmail.test(inputEmail.value);
+        //Validasi Email
+        const inputEmail = $('#email');
+        const inputEmailError = $('#inputEmailError');
+        const validasiEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    //Validasi Penginputan Nama
-    const inputNama = document.getElementById('nama');
-    const inputNamaError = document.getElementById('inputNamaError');
-    const validasiNama = /^[A-Z][a-z]*(?:[A-Z][a-z]*)*$/;
+        //Validasi Nama
+        const inputNama = $('#nama');
+        const inputNamaError = $('#inputNamaError');
+        const validasiNama = /^[A-Z][a-zA-Z\s]*$/;
 
-    //Validasi Penginputan No Handphone
-    const inputNoTelp = document.getElementById('noTelp');
-    const inputNoTelpError = document.getElementById('inputNoTelpError');
-    const validasiNoTelp = /^[0-9+]+$/;
+        //Validasi NoTelp
+        const inputNoTelp = $('#noTelp');
+        const inputNoTelpError = $('#inputNoTelpError');
+        const validasiNoTelp = /^[0-9+]+$/;
 
-    // Validasi Penginputan Password
-    const inputPassword = document.getElementById('password');
-    const inputPasswordError = document.getElementById('inputPasswordError');
-    const password = inputPassword.value;
-    const validasiPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    // Minimal 8 karakter, minimal 1 huruf besar, 1 huruf kecil, 1 angka, dan 1 karakter khusus
+        //Validasi Password
+        const inputPassword = $('#password');
+        const inputPasswordError = $('#inputPasswordError');
+        const password = inputPassword.val();
+        const validasiPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-    //Validasi Penginputan URL
-    const inputURL = document.getElementById('url');
-    const inputURLError = document.getElementById('inputURLError');
-    const validasiURL = /^(https?:\/\/)?((([a-zA-Z\d]([a-zA-Z\d-]{0,61}[a-zA-Z\d])?)\.)+[a-zA-Z]{2,}|((\d{1,3}\.){3}\d{1,3}))(\:\d+)?(\/[-a-zA-Z\d%@_.~+&:]*)*(\?[;&a-zA-Z\d%@_.,~+&:=-]*)?(#[-a-zA-Z\d_]*)?$/;
+        //Validasi URL
+        const inputURL = $('#url');
+        const inputURLError = $('#inputURLError');
+        const validasiURL = /^(https?:\/\/)?((([a-zA-Z\d]([a-zA-Z\d-]{0,61}[a-zA-Z\d])?)\.)+[a-zA-Z]{2,}|((\d{1,3}\.){3}\d{1,3}))(\:\d+)?(\/[-a-zA-Z\d%@_.~+&:]*)*(\?[;&a-zA-Z\d%@_.,~+&:=-]*)?(#[-a-zA-Z\d_]*)?$/;
 
-    //Inputan Nama
-    if (inputNama.value.trim() === '') 
-    {
-        inputNamaError.textContent = 'Tolong Masukkan Nama Anda';
-        inputNama.classList.add('border-red-500');
-    } 
-    else if (!validasiNama.test(inputNama.value)) 
-    {
-        inputNamaError.textContent = 'Masukkan Nama Yang Valid Dengan Menggunakan Pascal Case';
-        inputNama.classList.add('border-red-500');
-    } 
-    else 
-    {
-        inputNamaError.textContent = '';
-        inputNama.classList.remove('border-red-500');
-    }    
-    
-    //Inputan Email
-    if (inputEmail.value.trim() === '') 
-    {
-      inputEmailError.textContent = 'Tolong Masukkan Email Anda';
-      inputEmail.classList.add('border-red-500');
-    }
-    else if (!emailValid) 
-    {
-      inputEmailError.textContent = 'Tolong Masukkan Email Yang Valid';
-      inputEmail.classList.add('border-red-500');
-    } 
-    else 
-    {
-      inputEmailError.textContent = '';
-      inputEmail.classList.remove('border-red-500');
-    }
+        //Inputan Nama
+        if (inputNama.val().trim() === '') {
+            inputNamaError.text('Tolong Masukkan Nama Anda');
+            inputNama.addClass('border-red-500');
+        } else if (!validasiNama.test(inputNama.val())) {
+            inputNamaError.text('Masukkan Nama Yang Valid Dengan Menggunakan Pascal Case');
+            inputNama.addClass('border-red-500');
+        } else {
+            inputNamaError.text('');
+            inputNama.removeClass('border-red-500');
+        }
 
-    //Inputan No Handphone
-    if (inputNoTelp.value.trim() === '') 
-    {
-      inputNoTelpError.textContent = 'Tolong Masukkan No Handphone Anda';
-      inputNoTelp.classList.add('border-red-500');
-    } 
-    else if (!validasiNoTelp.test(inputNoTelp.value))
-    {
-      inputNoTelpError.textContent = 'Tolong Masukkan No Handphone Yang Valid';
-      inputNoTelp.classList.add('border-red-500');
-    } 
-    else 
-    {
-      inputNoTelpError.textContent = '';
-      inputNoTelp.classList.remove('border-red-500');
-    }
+        //Inputan Email
+        if (inputEmail.val().trim() === '') {
+            inputEmailError.text('Tolong Masukkan Email Anda');
+            inputEmail.addClass('border-red-500');
+        } else if (!validasiEmail.test(inputEmail.val())) {
+            inputEmailError.text('Tolong Masukkan Email Yang Valid');
+            inputEmail.addClass('border-red-500');
+        } else {
+            inputEmailError.text('');
+            inputEmail.removeClass('border-red-500');
+        }
 
-    //Validasi Penginputan Password
-    if (password.trim() === '') 
-    {
-        inputPasswordError.textContent = 'Tolong Masukkan Password Anda';
-        inputPassword.classList.add('border-red-500');
-    } 
-    else if (!validasiPassword.test(password)) 
-    {
-        inputPasswordError.textContent = 'Password harus minimal 8 karakter, 1 huruf besar, 1 huruf kecil, 1 angka, dan 1 karakter khusus (@$!%*?&).';
-        inputPassword.classList.add('border-red-500');
-    } 
-    else 
-    {
-        inputPasswordError.textContent = '';
-        inputPassword.classList.remove('border-red-500');
-    }
-    
-    // Validasi Penginputan URL
-    if (inputURL.value.trim() === '') 
-    {
-        inputURLError.textContent = 'Tolong Masukkan URL Anda';
-        inputURL.classList.add('border-red-500');
-    } 
-    else if (!validasiURL.test(inputURL.value)) 
-    {
-        inputURLError.textContent = 'Tolong Masukkan URL Yang Valid';
-        inputURL.classList.add('border-red-500');
-    } 
-    else 
-    {
-        inputURLError.textContent = '';
-        inputURL.classList.remove('border-red-500');
-    }
+        //Inputan NoTelp
+        if (inputNoTelp.val().trim() === '') {
+            inputNoTelpError.text('Tolong Masukkan No Handphone Anda');
+            inputNoTelp.addClass('border-red-500');
+        } else if (!validasiNoTelp.test(inputNoTelp.val())) {
+            inputNoTelpError.text('Tolong Masukkan No Handphone Yang Valid');
+            inputNoTelp.addClass('border-red-500');
+        } else {
+            inputNoTelpError.text('');
+            inputNoTelp.removeClass('border-red-500');
+        }
+
+        //Inputan Password
+        if (password.trim() === '') {
+            inputPasswordError.text('Tolong Masukkan Password Anda');
+            inputPassword.addClass('border-red-500');
+        } else if (!validasiPassword.test(password)) {
+            inputPasswordError.text('Password harus minimal 8 karakter, 1 huruf besar, 1 huruf kecil, 1 angka, dan 1 karakter khusus (@$!%*?&).');
+            inputPassword.addClass('border-red-500');
+        } else {
+            inputPasswordError.text('');
+            inputPassword.removeClass('border-red-500');
+        }
+
+        //Inputan URL
+        if (inputURL.val().trim() === '') {
+            inputURLError.text('Tolong Masukkan URL Anda');
+            inputURL.addClass('border-red-500');
+        } else if (!validasiURL.test(inputURL.val())) {
+            inputURLError.text('Tolong Masukkan URL Yang Valid');
+            inputURL.addClass('border-red-500');
+        } else {
+            inputURLError.text('');
+            inputURL.removeClass('border-red-500');
+        }
+    });
 });
-  
